@@ -1,0 +1,94 @@
+.section {
+  padding: 9rem 3.5rem;
+  display: flex; flex-direction: column;
+}
+.filters {
+  display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+}
+.filterBtn {
+  font-family: var(--font-display); font-size: 0.65rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--dim); border: 1px solid rgba(242,239,233,0.12);
+  background: transparent; padding: 0.5rem 1.2rem;
+  cursor: none; transition: all 0.2s;
+}
+.filterBtn.active,
+.filterBtn:hover {
+  color: var(--accent); border-color: rgba(0,229,255,0.35);
+  background: rgba(0,229,255,0.05);
+}
+.list { display: flex; flex-direction: column; gap: 1px; }
+.card {
+  background: rgba(16,18,26,0.6);
+  border: 1px solid rgba(242,239,233,0.07);
+  padding: 2rem 2.5rem;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 2rem;
+  cursor: none; transition: border-color 0.3s, background 0.3s;
+  position: relative; overflow: hidden;
+}
+.card::after {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 2px; background: var(--accent);
+  transform: scaleY(0); transform-origin: bottom;
+  transition: transform 0.3s;
+}
+.card:hover { border-color: rgba(0,229,255,0.2); background: rgba(0,229,255,0.03); }
+.card:hover::after { transform: scaleY(1); }
+.card:hover .arrow { opacity: 1; transform: translate(0,0); }
+
+.company {
+  font-family: var(--font-display); font-size: 0.62rem;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--dim); margin-bottom: 0.4rem;
+}
+.jobTitle {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.25rem; margin-bottom: 0.8rem;
+}
+.tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tag {
+  font-family: var(--font-display); font-size: 0.58rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(242,239,233,0.12);
+  color: var(--dim2);
+}
+.remote { border-color: rgba(0,229,255,0.3); color: var(--accent); }
+.hot { border-color: rgba(255,107,53,0.3); color: var(--accent2); }
+
+.cardRight { text-align: right; }
+.salary {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.1rem; margin-bottom: 0.3rem;
+}
+.posted { font-size: 0.72rem; color: var(--dim); margin-bottom: 1rem; }
+.applyBtn {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--dark);
+  background: var(--accent); border: none;
+  padding: 0.65rem 1.5rem; cursor: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.applyBtn:hover { transform: scale(1.04); box-shadow: 0 0 30px rgba(0,229,255,0.2); }
+
+.arrow {
+  position: absolute; bottom: 2rem; right: 2.5rem;
+  font-size: 1.2rem; color: var(--accent);
+  opacity: 0; transform: translate(-6px, 6px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.viewAll {
+  margin-top: 2.5rem;
+}
+.viewAll a {
+  font-family: var(--font-display); font-size: 0.68rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  cursor: none; transition: gap 0.3s;
+}
+.viewAll a:hover { gap: 1rem; }

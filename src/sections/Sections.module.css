@@ -1,0 +1,181 @@
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes pillFade { 0%,100%{opacity:0.6} 50%{opacity:1} }
+
+/* STATS */
+.statsBand {
+  padding: 5rem 3.5rem;
+  border-top: 1px solid rgba(242,239,233,0.06);
+  border-bottom: 1px solid rgba(242,239,233,0.06);
+  display: flex; justify-content: space-around; align-items: center;
+  background: rgba(10,12,20,0.4);
+}
+.statItem { text-align: center; }
+.statNum {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1; color: var(--accent); display: block;
+}
+.statLabel {
+  font-family: var(--font-display); font-size: 0.62rem;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--dim); margin-top: 0.5rem; display: block;
+}
+.statDiv { width: 1px; height: 50px; background: rgba(242,239,233,0.08); }
+
+/* HOW IT WORKS */
+.howSection { padding: 9rem 3.5rem; }
+.howHeader { margin-bottom: 5rem; }
+.stepsGrid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; border-top: 1px solid rgba(242,239,233,0.08);
+}
+.stepCard {
+  padding: 3rem 2rem 3rem 0;
+  border-right: 1px solid rgba(242,239,233,0.08);
+  transition: background 0.3s; cursor: none;
+  position: relative;
+}
+.stepCard:last-child { border-right: none; }
+.stepCard:not(:first-child) { padding-left: 2rem; }
+.stepCard:hover { background: rgba(0,229,255,0.02); }
+.stepNum {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 4rem; line-height: 1;
+  color: transparent; -webkit-text-stroke: 1px rgba(0,229,255,0.2);
+  margin-bottom: 1.5rem;
+}
+.stepConnector {
+  position: absolute; top: 3.5rem; right: -1px;
+  width: 20px; height: 1px; background: var(--accent); opacity: 0.4;
+}
+.stepTitle {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1rem; text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 0.8rem;
+}
+.stepDesc {
+  font-size: 0.85rem; font-weight: 300;
+  line-height: 1.75; color: var(--dim);
+}
+
+/* PRICING */
+.pricingSection { padding: 9rem 3.5rem; }
+.plansGrid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; margin-top: 4rem;
+  background: rgba(242,239,233,0.06);
+}
+.planCard {
+  background: var(--dark);
+  padding: 3rem 2.5rem;
+  border: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+  cursor: none; position: relative;
+}
+.planCard.featured {
+  background: rgba(0,229,255,0.04);
+  border-color: rgba(0,229,255,0.2) !important;
+}
+.planCard:hover:not(.featured) { border-color: rgba(242,239,233,0.12); }
+.featuredBadge {
+  position: absolute; top: -1px; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display); font-size: 0.58rem;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--dark); background: var(--accent);
+  padding: 0.25rem 1rem;
+}
+.planName {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 0.7rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--dim);
+  margin-bottom: 1rem;
+}
+.planPrice {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 3rem; line-height: 1; color: var(--cream); margin-bottom: 0.4rem;
+}
+.planPrice sup { font-size: 1.2rem; vertical-align: top; margin-top: 0.5rem; color: var(--dim2); }
+.planPeriod {
+  font-family: var(--font-display); font-size: 0.65rem;
+  letter-spacing: 0.2em; color: var(--dim);
+  margin-bottom: 2rem; display: block;
+}
+.planFeatures { list-style: none; margin-bottom: 2.5rem; }
+.planFeatures li {
+  font-size: 0.85rem; font-weight: 300; color: var(--dim2);
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(242,239,233,0.06);
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.planFeatures li::before { content: '✓'; color: var(--accent); font-size: 0.75rem; flex-shrink: 0; }
+.noFeature { color: rgba(242,239,233,0.2) !important; }
+.noFeature::before { content: '×' !important; color: rgba(242,239,233,0.2) !important; }
+.planBtn {
+  width: 100%;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 0.7rem; letter-spacing: 0.2em;
+  text-transform: uppercase; padding: 1rem;
+  cursor: none; transition: all 0.2s; border: none;
+}
+.outline {
+  background: transparent; color: var(--cream);
+  border: 1px solid rgba(242,239,233,0.2) !important;
+}
+.outline:hover { border-color: rgba(242,239,233,0.4) !important; background: rgba(242,239,233,0.04); }
+.solid { background: var(--accent); color: var(--dark); }
+.solid:hover { box-shadow: 0 0 40px rgba(0,229,255,0.25); transform: scale(1.02); }
+
+/* CTA */
+.ctaSection {
+  padding: 10rem 3.5rem;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+}
+.ctaEyebrow {
+  font-family: var(--font-display); font-size: 0.65rem;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 2rem;
+}
+.ctaBig {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  text-transform: uppercase; line-height: 0.92; margin-bottom: 3rem;
+}
+.ctaBig em {
+  font-style: normal; display: block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(242,239,233,0.25);
+}
+.ctaDesc {
+  font-weight: 300; font-size: 1rem;
+  color: var(--dim2); max-width: 440px;
+  line-height: 1.75; margin-bottom: 3rem;
+}
+.ctaActions {
+  display: flex; align-items: center; gap: 1.5rem;
+}
+
+/* FOOTER */
+.footer {
+  padding: 2rem 3.5rem;
+  border-top: 1px solid rgba(242,239,233,0.07);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footerLogo {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 0.9rem; letter-spacing: 0.18em;
+}
+.footerLogo span { color: var(--accent); }
+.footerLinks { display: flex; gap: 2rem; list-style: none; }
+.footerLinks a {
+  font-family: var(--font-display); font-size: 0.62rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--dim); text-decoration: none;
+  transition: color 0.3s; cursor: none;
+}
+.footerLinks a:hover { color: var(--accent); }
+.footerCopy {
+  font-family: var(--font-display); font-size: 0.6rem;
+  letter-spacing: 0.15em; color: var(--dim);
+}

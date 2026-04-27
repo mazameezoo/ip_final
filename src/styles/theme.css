@@ -1,0 +1,93 @@
+:root {
+  --tf-cyan: #00d2c8;
+  --tf-cyan-dark: #0077aa;
+  --tf-bg: #030b12;
+  --tf-surface: rgba(5, 15, 26, 0.9);
+  --tf-surface-solid: #05131a;
+  --tf-border: rgba(0, 210, 200, 0.13);
+  --tf-border-strong: rgba(0, 210, 200, 0.3);
+  --tf-border-soft: rgba(0, 210, 200, 0.08);
+
+  --tf-text: #ffffff;
+  --tf-text-muted: rgba(255, 255, 255, 0.6);
+  --tf-text-dim: rgba(255, 255, 255, 0.35);
+  --tf-text-faint: rgba(255, 255, 255, 0.15);
+
+  --tf-success: #22c55e;
+  --tf-warning: #ffd166;
+  --tf-danger: #ff5555;
+  --tf-danger-soft: rgba(255, 85, 85, 0.15);
+
+  --tf-font-display: 'Rajdhani', sans-serif;
+  --tf-font-body: 'Barlow', sans-serif;
+  --tf-font-mono: 'Fira Code', 'Courier New', monospace;
+
+  --tf-shadow-glow: 0 0 40px rgba(0, 210, 200, 0.04);
+  --tf-shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --tf-glass-blur: blur(16px);
+
+  --tf-track-line: linear-gradient(90deg, transparent, rgba(0,210,200,0.4), transparent);
+  --tf-cyan-gradient: linear-gradient(135deg, #00d2c8, #0077aa);
+
+  --tf-radius-sm: 2px;
+  --tf-radius-md: 3px;
+  --tf-radius-lg: 6px;
+
+  --tf-space-xs: 6px;
+  --tf-space-sm: 10px;
+  --tf-space-md: 16px;
+  --tf-space-lg: 24px;
+  --tf-space-xl: 32px;
+}
+
+.tf-glass {
+  background: var(--tf-surface);
+  border: 1px solid var(--tf-border);
+  backdrop-filter: var(--tf-glass-blur);
+  box-shadow: var(--tf-shadow-glow), var(--tf-shadow-card);
+  border-radius: var(--tf-radius-md);
+  position: relative;
+}
+
+.tf-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: var(--tf-track-line);
+}
+
+.tf-eyebrow {
+  font-family: var(--tf-font-display);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--tf-cyan);
+}
+
+.tf-section-title {
+  font-family: var(--tf-font-display);
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tf-text-dim);
+}
+
+@keyframes tf-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+@keyframes tf-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes tf-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
